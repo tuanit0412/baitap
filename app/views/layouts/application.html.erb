@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Shop</title>
+    <title>Ban do choi</title>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track'=> 'reload' %>
+            <%= javascript_include_tag 'application', 'data-turbolinks-track'=> 'reload' %>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
   </head>
 
-  <body class='<%=controller.controller_name %>'>
-    <%= yield %>
+  <body class="<%= controller.controller_name %>">
+    <div id="banner">
+    <%= image_tag '/assets/favicon.png', alt: 'The Rock' %>
+    <span class="title"><%= @page_title %></span>
+  </div>
+  <div id="columns">
+      <div id="side">
+        <ul>
+          <li><a href="http://localhost:3000/">Home</a></li>
+          <li><a href="http://localhost:3000/products">Products</a></li>
+        </ul>
+      </div>
+      <div id="main">
+        <%= yield %>
+      </div>
+  </div>
   </body>
 </html>

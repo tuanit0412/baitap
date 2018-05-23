@@ -1,6 +1,6 @@
+require 'pry'
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
   # GET /products
   # GET /products.json
   def index
@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
 
   # POST /products
   # POST /products.json
+
   def create
     @product = Product.new(product_params)
 
