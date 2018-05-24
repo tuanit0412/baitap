@@ -16,8 +16,8 @@
 body, body > p, body > ol, body > ul, body > td {margin: 7px !important}
 #banner {
 	position: relative;
-	min-height: 40px;
-	background: #9c9;
+	min-height: 45px;
+	background: #000000;
 	padding: 30px;
 	border-bottom: 2px solid;
 	font: small-caps 40px/40px "Times New Roman", serif;
@@ -28,13 +28,28 @@ body, body > p, body > ol, body > ul, body > td {margin: 7px !important}
 		position: absolute;
 		top: 0;
 		left: 0;
-
-		width: 80px;
+		width: 150px;
+	}
+	ul {
+		list-style-type: none;
+   		margin: 5px;
+   		 padding: 0;
+    	overflow: hidden;
+		li {
+			list-style: none;
+			float: right;
+			a {
+				color: red;
+				font-size: large;
+				padding: 14px 16px;
+				text-decoration: none;
+			}
+		}
 	}
 }
 #notice {
 	color: #000 !important;
-	border: 2px solid red;
+	// border: 2px solid red;
 	padding: 1em;
 	margin-bottom: 2em;
 	background-color: #f0f0f0;
@@ -44,8 +59,9 @@ body, body > p, body > ol, body > ul, body > td {margin: 7px !important}
 	display: none;
 }
 #columns {
-	background: #2e8b57;
+	background: #01220f;
 	display: flex;
+	height: auto;
 	#main {
 		padding: 3em;
 		background: white;
@@ -54,17 +70,57 @@ body, body > p, body > ol, body > ul, body > td {margin: 7px !important}
 	#side {
 		margin-top: 30px;
 		padding: 1em 2em;
-/*		background: #1e90ff;*/
-		ul {
-			padding: 0;
-			li {
-				list-style: none;
-				a {
-					color: red;
-					font-size: large;;
-					text-decoration: none;
+
+		form, div {
+				display: inline;
+			}
+			input {
+				font-size: small;
+			}
+			#cart {
+				font-size: smaller;
+				color:	white;
+				table {
+					border-top: 1px dotted #595;
+					border-bottom: 1px dotted #595;
+					margin-bottom: 10px;
 				}
 			}
+/*		background: #1e90ff;*/
+	}
+}
+
+/* định dạng cho form checkout*/
+.depot_form {
+	fieldset {
+		background: #efe;
+		legend {
+			color: #dfd;
+			background: #141;
+			font-family: sans-serif;
+			padding: 0.2em 1em;
+		}
+		div {
+			margin-bottom: 0.3em;
+		}
+	}
+	form {
+		label {
+			width: 5em;
+			float: left;
+			text-align: right;
+			padding-top: 0.2em;
+			margin-right: 0.1em;
+			display: block;
+		}
+		select, textarea, input {
+			margin-left: 0.5em;
+		}
+		.submit {
+			margin-left: 4em;
+		}
+		br {
+			display: none
 		}
 	}
 }

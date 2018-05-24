@@ -1,0 +1,15 @@
+<% unless cart.line_items.empty? %>
+    <h2>Giỏ hàng đây</h2>
+    <table>
+        <%= render(cart.line_items) %>
+            <tr class="total_line">
+                <td colspan="2">Total</td>
+                <td class="total_cell">
+                    <%= number_to_currency(cart.total_price, precision: 0, unit: "VND", separator: ",", format: "%n %u") %>
+                </td>
+            </tr>
+    </table>
+    <%= button_to "Checkout", new_order_path, method: :get %>
+    <%= button_to 'Xóa giỏ hàng', cart, method: :delete,
+data: { confirm: 'Chắc không?' } %>
+        <% end %>

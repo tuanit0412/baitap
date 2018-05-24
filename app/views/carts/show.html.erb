@@ -1,9 +1,17 @@
-<p id="notice"><%= notice %></p>
-<h2>Your Pragmatic Cart</h2>
-<ul>
-<% @cart.line_items.each do |item| %>
-<li><%= item.quantity %> &times; <%= item.product.title %></li>
-<% end %>
-</ul>
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<!-- <p id="notice">
+    <%= notice %> -->
+</p>
+<h2>Giỏ hàng đây</h2>
+<table>
+    <%= render (@cart.line_items) %>
+    <!--The render() method will iterate over any collection that’s
+passed to it.-->
+            <tr class="total_line">
+                <td colspan="2">Tổng cộng: </td>
+                <td class="total_cell">
+                    <%= number_to_currency(cart.total_price, precision: 0, unit: "VND", separator: ",", format: "%n %u") %>
+                </td>
+            </tr>
+</table>
+<%= button_to 'Xóa giỏ hàng', @cart, method: :delete,
+data: { confirm: 'Chắc không?' } %>
